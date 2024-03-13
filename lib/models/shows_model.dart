@@ -16,28 +16,28 @@ import 'rating.dart';
 import 'schedules.dart';
 
 class Shows {
-  int id;
+  num id;
   String url;
   String name;
   Type? type;
   Language? language;
   List<Genre> genres;
   Status? status;
-  int runtime;
-  int averageRuntime;
+  num runtime;
+  num averageRuntime;
   DateTime premiered;
   DateTime ended;
   String officialSite;
   Schedule schedule;
   Rating rating;
-  int weight;
+  num weight;
   Network network;
   Network webChannel;
   Country dvdCountry;
   Externals externals;
   Image image;
   String summary;
-  int updated;
+  num updated;
   Links links;
 
   Shows({

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:task_app/controllers/details_page_controller.dart';
+import 'package:task_app/controllers/home_screen_controller.dart';
 
 import 'utils/theme/app_theme.dart';
 import 'view/home_screen.dart';
 
-void main()async{
+void main() async {
   runApp(const MyApp());
 }
 
@@ -12,10 +15,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      title: 'My Task App',
-      theme: AppTheme.themeDataLight,
-      home: const MyHomeScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => HomeScreenController(),
+        ),  ChangeNotifierProvider(
+          create: (context) => DetailsPageControler(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'My Task App',
+        theme: AppTheme.themeDataLight,
+        home: const MyHomeScreen(),
+      ),
     );
   }
 }

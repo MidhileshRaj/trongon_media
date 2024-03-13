@@ -9,7 +9,7 @@ class AppTheme {
       scaffoldBackgroundColor: Colors.black,
       primarySwatch: Colors.yellow,
 
-      textTheme: AppTextTheme.normalTextStyleDark,
+      textTheme: AppTextTheme.normalTextThemeDark,
       appBarTheme: const AppBarTheme(
           backgroundColor: Colors.black,titleTextStyle: AppTextTheme.titleTextStyleLight ),);
   static ButtonStyle elevatedStyle = ElevatedButton.styleFrom(backgroundColor: Colors.yellow);

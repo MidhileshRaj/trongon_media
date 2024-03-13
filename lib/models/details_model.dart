@@ -1,4 +1,4 @@
-class ShowsDemo {
+class Details {
   num? id;
   String? url;
   String? name;
@@ -23,7 +23,7 @@ class ShowsDemo {
   num? updated;
   Links? lLinks;
 
-  ShowsDemo(
+  Details(
       {this.id,
         this.url,
         this.name,
@@ -48,7 +48,7 @@ class ShowsDemo {
         this.updated,
         this.lLinks});
 
-  ShowsDemo.fromJson(Map<String, dynamic> json) {
+  Details.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     url = json['url'];
     name = json['name'];
@@ -62,26 +62,26 @@ class ShowsDemo {
     ended = json['ended'];
     officialSite = json['officialSite'];
     schedule = json['schedule'] != null
-        ?  Schedule.fromJson(json['schedule'])
+        ? new Schedule.fromJson(json['schedule'])
         : null;
     rating =
-    json['rating'] != null ?  Rating.fromJson(json['rating']) : null;
+    json['rating'] != null ? new Rating.fromJson(json['rating']) : null;
     weight = json['weight'];
     network =
-    json['network'] != null ?  Network.fromJson(json['network']) : null;
+    json['network'] != null ? new Network.fromJson(json['network']) : null;
     webChannel = json['webChannel'];
     dvdCountry = json['dvdCountry'];
     externals = json['externals'] != null
-        ?  Externals.fromJson(json['externals'])
+        ? new Externals.fromJson(json['externals'])
         : null;
-    image = json['image'] != null ?  Image.fromJson(json['image']) : null;
+    image = json['image'] != null ? new Image.fromJson(json['image']) : null;
     summary = json['summary'];
     updated = json['updated'];
-    lLinks = json['_links'] != null ?  Links.fromJson(json['_links']) : null;
+    lLinks = json['_links'] != null ? new Links.fromJson(json['_links']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['url'] = this.url;
     data['name'] = this.name;
@@ -133,7 +133,7 @@ class Schedule {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['time'] = this.time;
     data['days'] = this.days;
     return data;
@@ -150,7 +150,7 @@ class Rating {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['average'] = this.average;
     return data;
   }
@@ -160,7 +160,7 @@ class Network {
   num? id;
   String? name;
   Country? country;
-  String? officialSite;
+  Null? officialSite;
 
   Network({this.id, this.name, this.country, this.officialSite});
 
@@ -168,12 +168,12 @@ class Network {
     id = json['id'];
     name = json['name'];
     country =
-    json['country'] != null ?  Country.fromJson(json['country']) : null;
+    json['country'] != null ? new Country.fromJson(json['country']) : null;
     officialSite = json['officialSite'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['name'] = this.name;
     if (this.country != null) {
@@ -198,7 +198,7 @@ class Country {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
     data['code'] = this.code;
     data['timezone'] = this.timezone;
@@ -220,7 +220,7 @@ class Externals {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['tvrage'] = this.tvrage;
     data['thetvdb'] = this.thetvdb;
     data['imdb'] = this.imdb;
@@ -240,7 +240,7 @@ class Image {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['medium'] = this.medium;
     data['original'] = this.original;
     return data;
@@ -254,14 +254,14 @@ class Links {
   Links({this.self, this.previousepisode});
 
   Links.fromJson(Map<String, dynamic> json) {
-    self = json['self'] != null ?  Self.fromJson(json['self']) : null;
+    self = json['self'] != null ? new Self.fromJson(json['self']) : null;
     previousepisode = json['previousepisode'] != null
-        ?  Self.fromJson(json['previousepisode'])
+        ? new Self.fromJson(json['previousepisode'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.self != null) {
       data['self'] = this.self!.toJson();
     }
@@ -282,7 +282,7 @@ class Self {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = new Map<String, dynamic>();
     data['href'] = this.href;
     return data;
   }

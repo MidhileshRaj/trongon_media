@@ -11,7 +11,7 @@ class AppTextTheme {
       fontStyle: FontStyle.italic,
       fontWeight: FontWeight.bold,
       fontSize: 30);
-  static const TextTheme normalTextStyleDark = TextTheme(
+  static const TextTheme normalTextThemeDark = TextTheme(
     labelLarge: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
     displayMedium: TextStyle(color: Colors.white),
     displayLarge: TextStyle(color: Colors.white),
