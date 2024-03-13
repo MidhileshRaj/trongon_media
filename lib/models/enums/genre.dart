@@ -1,0 +1,51 @@
+import '../enumvlaues.dart';
+
+enum Genre {
+  ACTION,
+  ADVENTURE,
+  ANIME,
+  COMEDY,
+  CRIME,
+  DRAMA,
+  ESPIONAGE,
+  FAMILY,
+  FANTASY,
+  HISTORY,
+  HORROR,
+  LEGAL,
+  MEDICAL,
+  MUSIC,
+  MYSTERY,
+  ROMANCE,
+  SCIENCE_FICTION,
+  SPORTS,
+  SUPERNATURAL,
+  THRILLER,
+  WAR,
+  WESTERN
+}
+
+final genreValues = EnumValues({
+  "Action": Genre.ACTION,
+  "Adventure": Genre.ADVENTURE,
+  "Anime": Genre.ANIME,
+  "Comedy": Genre.COMEDY,
+  "Crime": Genre.CRIME,
+  "Drama": Genre.DRAMA,
+  "Espionage": Genre.ESPIONAGE,
+  "Family": Genre.FAMILY,
+  "Fantasy": Genre.FANTASY,
+  "History": Genre.HISTORY,
+  "Horror": Genre.HORROR,
+  "Legal": Genre.LEGAL,
+  "Medical": Genre.MEDICAL,
+  "Music": Genre.MUSIC,
+  "Mystery": Genre.MYSTERY,
+  "Romance": Genre.ROMANCE,
+  "Science-Fiction": Genre.SCIENCE_FICTION,
+  "Sports": Genre.SPORTS,
+  "Supernatural": Genre.SUPERNATURAL,
+  "Thriller": Genre.THRILLER,
+  "War": Genre.WAR,
+  "Western": Genre.WESTERN
+});
