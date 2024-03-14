@@ -37,8 +37,9 @@ class Viewcast extends StatelessWidget {
                       gender: data["person"]["gender"],
                       dob: data["person"]["birthday"],
                       url: data["person"]["url"],
-                      characterImage1: data["character"]["image"]["medium"],
-                      characterImage2: data["character"]["image"]["original"],);
+                      // characterImage1: data["character"]["image"]!["medium"].toString(),
+                      // characterImage2: data["character"]["image"]["original"].toString(),
+                    );
                   },);
               } else {
                 return const Text("Something went wrong");

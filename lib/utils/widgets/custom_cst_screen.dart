@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -11,7 +9,9 @@ class CustomCastDetails extends StatelessWidget {
     required this.charactor,
     required this.gender,
     required this.dob,
-    required this.url, required this.characterImage1, required this.characterImage2,
+    required this.url,
+    // required this.characterImage1,
+    // required this.characterImage2,
   });
 
   final String image;
@@ -20,8 +20,8 @@ class CustomCastDetails extends StatelessWidget {
   final String? gender;
   final String? dob;
   final String? url;
-  final String? characterImage1;
-  final String? characterImage2;
+  // final String? characterImage1;
+  // final String? characterImage2;
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +36,7 @@ class CustomCastDetails extends StatelessWidget {
           Image(
             height: 150,
             width: 120,
-            image: NetworkImage(
-                image),
+            image: NetworkImage(image),
           ),
           const Gap(2),
           Column(
@@ -51,34 +50,38 @@ class CustomCastDetails extends StatelessWidget {
               Text("As   $charactor"),
               Text("Born on  $dob"),
               Text("Gender :- $gender"),
-              SizedBox(width:280,child: Text(url!,)),
+              SizedBox(
+                  width: 280,
+                  child: Text(
+                    url!,
+                  )),
               SizedBox(
                 width: 200,
                 height: 100,
-                child: ListView(
-                  shrinkWrap: true,
-                  padding: const EdgeInsets.all(8),
-                  scrollDirection: Axis.horizontal,
-                  children: [ Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: characterImage1== null?const SizedBox():Image(
-                      height: 50,
-                      width: 50,
-                      image: NetworkImage(
-                          characterImage1!),
-                    ),
-                  ), Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image(
-                      height: 50,
-                      width: 50,
-                      image: NetworkImage(
-                          characterImage2!),
-                    ),
-                  )
-                  ]
-                  ,
-                ),
+                // child: ListView(
+                //   shrinkWrap: true,
+                //   padding: const EdgeInsets.all(8),
+                //   scrollDirection: Axis.horizontal,
+                //   children: [ Padding(
+                //     padding: const EdgeInsets.all(8.0),
+                //     child: characterImage1== null?const SizedBox():Image(
+                //       height: 50,
+                //       width: 50,
+                //       image: NetworkImage(
+                //           characterImage1!),
+                //     ),
+                //   ), Padding(
+                //     padding: const EdgeInsets.all(8.0),
+                //     child: characterImage2== null?const SizedBox(): Image(
+                //       height: 50,
+                //       width: 50,
+                //       image: NetworkImage(
+                //           characterImage2!),
+                //     ),
+                //   )
+                //   ]
+                //   ,
+                // ),
               )
             ],
           )
