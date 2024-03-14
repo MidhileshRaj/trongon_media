@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 class CustomGridItem extends StatelessWidget {
    const CustomGridItem({super.key, required this.rating, required this.imageLink, required this.name, required this.genre});
 
-  final num rating ;
+  final num? rating ;
   final String imageLink;
   final String name;
   final List genre;
@@ -41,20 +41,15 @@ class CustomGridItem extends StatelessWidget {
               shrinkWrap: true,
             ),
           ),
-          Gap(10),
-          rating==null?Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(5, (index) {
-              return const Icon(Icons.star_border);
-            }),
-          ):
+          const Gap(10),
+          rating==null?const SizedBox():
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(5, (index) {
 
-              if (index < rating/2!.floor()) {
+              if (index < rating!/2!.floor()) {
                 return const Icon(Icons.star, color: Colors.amber);
-              } else if (index == rating/2!.floor() && rating/2! % 1 != 0) {
+              } else if (index == rating!/2!.floor() && rating!/2! % 1 != 0) {
                 return const Icon(Icons.star_half, color: Colors.amber);
               } else {
                 return const Icon(Icons.star_border, color: Colors.grey);

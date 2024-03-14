@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 import 'package:task_app/controllers/details_page_controller.dart';
 import 'package:task_app/utils/theme/app_theme.dart';
+import 'package:task_app/view/view_cast.dart';
 
 class ShowDetailsPage extends StatelessWidget {
   const ShowDetailsPage({super.key, required this.id});
@@ -17,15 +18,17 @@ class ShowDetailsPage extends StatelessWidget {
           .getDetails(id),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Scaffold(body: Center(child: CircularProgressIndicator()));
+          return const Scaffold(
+              body: Center(child: CircularProgressIndicator()));
         }
         if (snapshot.hasError) {
-          return const Scaffold(body: Center(child: Text("Error Fetching Data")));
+          return const Scaffold(
+              body: Center(child: Text("Error Fetching Data")));
         }
         if (snapshot.hasData) {
           return Scaffold(
             appBar: AppBar(
-              title:  Text("${snapshot.data!["name"]}"),
+              title: Text("${snapshot.data!["name"]}"),
             ),
             body: SafeArea(
               child: SingleChildScrollView(
@@ -49,26 +52,32 @@ class ShowDetailsPage extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Viewcast(id: id),
+                            ));
                       },
                       style: AppTheme.elevatedStyle,
                       child: const Text("Show Cast"),
                     ),
                     Gap(10),
                     SizedBox(
-                        width: MediaQuery.sizeOf(context).width * .8,
-                        child: Text(
-                          " ${snapshot.data!["summary"]}",
-                          textAlign: TextAlign.justify,
-                        ),),
+                      width: MediaQuery.sizeOf(context).width * .8,
+                      child: Text(
+                        " ${snapshot.data!["summary"]}",
+                        textAlign: TextAlign.justify,
+                      ),
+                    ),
                     const Gap(20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(5, (index) {
-                        var rating = snapshot.data!["rating"]["average"]!/2;
+                        var rating = snapshot.data!["rating"]["average"]! / 2;
                         if (index < rating.floor()) {
                           return Icon(Icons.star, color: Colors.amber);
-                        } else if (index == rating.floor() && rating! % 1 != 0) {
+                        } else if (index == rating.floor() &&
+                            rating! % 1 != 0) {
                           return Icon(Icons.star_half, color: Colors.amber);
                         } else {
                           return Icon(Icons.star_border, color: Colors.grey);
@@ -81,7 +90,8 @@ class ShowDetailsPage extends StatelessWidget {
             ),
           );
         } else {
-          return const Scaffold(body: Center(child: Text("Something went wrong")));
+          return const Scaffold(
+              body: Center(child: Text("Something went wrong")));
         }
       },
     );

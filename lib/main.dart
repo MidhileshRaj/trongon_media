@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:task_app/controllers/details_page_controller.dart';
 import 'package:task_app/controllers/home_screen_controller.dart';
 
+import 'controllers/cast_details_page.dart';
 import 'utils/theme/app_theme.dart';
 import 'view/home_screen.dart';
 
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
           create: (context) => HomeScreenController(),
         ),  ChangeNotifierProvider(
           create: (context) => DetailsPageControler(),
+        ), ChangeNotifierProvider(
+          create: (context) => CastDetailsController(),
         ),
       ],
       child: MaterialApp(
