@@ -129,7 +129,7 @@ class _CourseViewPageState extends State<CourseViewPage> {
                     width: MediaQuery.sizeOf(context).height * .8,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.cyan[100]),
+                        color: const Color(0XFFDBEDF8)),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
