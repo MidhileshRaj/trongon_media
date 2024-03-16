@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learners_app/controller/course_page_controller.dart';
+import 'package:learners_app/controller/feeds_page_controller.dart';
 import 'package:learners_app/controller/home_page_controller.dart';
 import 'package:learners_app/controller/main_page_controller.dart';
 import 'package:learners_app/view/main_screen.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => MainPageController(),),
         ChangeNotifierProvider(create: (context) => HomePageController(),),
         ChangeNotifierProvider(create: (context) => CoursePageController(),),
+        ChangeNotifierProvider(create: (context) => FeedPageController(),),
       ],
       child: MaterialApp(
         theme: ThemeData(

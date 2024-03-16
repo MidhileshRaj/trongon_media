@@ -7,6 +7,8 @@ import 'package:learners_app/constants.dart';
 import '../model/course_page_model.dart';
 
 class CoursePageController extends ChangeNotifier{
+
+  // To get api response of user course view
   Future<TotalResponsePage2?> getData() async {
     var url = Uri.parse(AppConstants.coursePageApi);
     try {

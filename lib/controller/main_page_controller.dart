@@ -7,10 +7,14 @@ class MainPageController extends ChangeNotifier{
 
   int currentIndex = 0;
 
+  // Page controller intialize
   initPageControl(){
     pageController = PageController(initialPage: currentIndex);
   }
 
+
+
+  //On tap of bottomnav and page slide method
   onPageChenge(index){
     currentIndex = index;
     pageController.jumpToPage(index);
